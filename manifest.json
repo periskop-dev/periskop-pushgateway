@@ -1,0 +1,10 @@
+{
+  "_schema": "soundcloud/applicationmanifest/v1",
+  "name": "repository-template",
+  "description": "SoundCloud's template for GitHub repository generation",
+  "owner": "beep-team",
+  "type": "other",
+  "status": "development",
+  "ci_dashboard": "https://ci.soundcloud.org/<fill-in-CI-dashboard>",
+  "dependencies": []
+}
