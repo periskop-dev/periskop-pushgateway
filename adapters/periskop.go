@@ -42,7 +42,6 @@ func ToPeriskopErrorWithContext(errWithContext ErrorWithContext) periskop.ErrorW
 		Class:      errWithContext.Error.Class,
 		Message:    errWithContext.Error.Message,
 		Stacktrace: errWithContext.Error.Stacktrace,
-		//Cause:      errWithContext.Error.Cause,
 	}
 	httpContext := periskop.HTTPContext{
 		RequestMethod:  errWithContext.HTTPContext.RequestBody,
