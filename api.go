@@ -11,9 +11,17 @@ import (
 
 func NewErrorsGatewayHandler(c *periskop.ErrorCollector) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
-		payload, _ := ioutil.ReadAll(req.Body)
+		payload, err := ioutil.ReadAll(req.Body)
+		if err != nil {
+			c.ReportWithHTTPRequest(err, req)
+			http.Error(w, err.Error(), 500)
+		}
 		res := adapters.Payload{}
-		json.Unmarshal(payload, &res)
+		err = json.Unmarshal(payload, &res)
+		if err != nil {
+			c.ReportWithHTTPRequest(err, req)
+			http.Error(w, err.Error(), 500)
+		}
 		for _, errorAggregate := range res.AggregatedErrors {
 			for _, err := range errorAggregate.LatestErrors {
 				errWithContext := adapters.ToPeriskopErrorWithContext(err)

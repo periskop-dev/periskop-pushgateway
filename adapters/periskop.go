@@ -1,10 +1,14 @@
 package adapters
 
-import "github.com/soundcloud/periskop-go"
+import (
+	"time"
+
+	"github.com/soundcloud/periskop-go"
+)
 
 type Payload struct {
 	AggregatedErrors []ErrorAggregate `json:"aggregated_errors"`
-	TargetUUID       string           `json:"target_uuid"`
+	TargetUUID       string           `json:"target_uuid"` // ignored
 }
 
 type ErrorAggregate struct {
@@ -12,13 +16,13 @@ type ErrorAggregate struct {
 	TotalCount     int                `json:"total_count"`
 	Severity       string             `json:"severity"`
 	LatestErrors   []ErrorWithContext `json:"latest_errors"`
-	CreatedAt      int64              `json:"created_at"`
+	CreatedAt      time.Time          `json:"created_at"` // ignored
 }
 
 type ErrorWithContext struct {
 	Error       ErrorInstance `json:"error"`
-	UUID        string        `json:"uuid"`
-	Timestamp   int64         `json:"timestamp"`
+	UUID        string        `json:"uuid"`      // ignored
+	Timestamp   time.Time     `json:"timestamp"` // ignored
 	Severity    string        `json:"severity"`
 	HTTPContext *HTTPContext  `json:"http_context"`
 }
@@ -27,7 +31,7 @@ type ErrorInstance struct {
 	Class      string         `json:"class"`
 	Message    string         `json:"message"`
 	Stacktrace []string       `json:"stacktrace"`
-	Cause      *ErrorInstance `json:"cause"`
+	Cause      *ErrorInstance `json:"cause"` // ignored
 }
 
 type HTTPContext struct {
@@ -43,11 +47,16 @@ func ToPeriskopErrorWithContext(errWithContext ErrorWithContext) periskop.ErrorW
 		Message:    errWithContext.Error.Message,
 		Stacktrace: errWithContext.Error.Stacktrace,
 	}
-	httpContext := periskop.HTTPContext{
-		RequestMethod:  errWithContext.HTTPContext.RequestBody,
-		RequestURL:     errWithContext.HTTPContext.RequestURL,
-		RequestHeaders: errWithContext.HTTPContext.RequestHeaders,
-		RequestBody:    &errWithContext.HTTPContext.RequestBody,
+
+	httpContext := periskop.HTTPContext{}
+	if errWithContext.HTTPContext != nil {
+		httpContext = periskop.HTTPContext{
+			RequestMethod:  errWithContext.HTTPContext.RequestBody,
+			RequestURL:     errWithContext.HTTPContext.RequestURL,
+			RequestHeaders: errWithContext.HTTPContext.RequestHeaders,
+			RequestBody:    &errWithContext.HTTPContext.RequestBody,
+		}
 	}
+
 	return periskop.NewErrorWithContext(errInstance, periskop.Severity(errWithContext.Severity), &httpContext)
 }
