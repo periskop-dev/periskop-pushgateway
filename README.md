@@ -1,5 +1,7 @@
 # periskop-pushgateway
 
+Pushgateway for [Periskop](https://github.com/soundcloud/periskop)
+
 ## API
 
 ### Push errors
@@ -46,7 +48,7 @@ curl -v -X POST -H "Content-Type:application/json" -d '
 ' localhost:7878/errors
 ```
 
-# Exported errors
+### Get exported errors
 
 `GET /-/errors/`
 
