@@ -1,6 +1,9 @@
 # periskop-pushgateway
 
-Pushgateway for [Periskop](https://github.com/soundcloud/periskop)
+Pushgateway for [Periskop](https://github.com/soundcloud/periskop).
+
+![2021-10-04_10-28](https://user-images.githubusercontent.com/280193/135818707-ad1d62b1-e65c-4878-a6e0-19d2f37e8022.png)
+
 
 ## API
 
