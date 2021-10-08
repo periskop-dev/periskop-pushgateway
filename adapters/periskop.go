@@ -51,7 +51,7 @@ func ToPeriskopErrorWithContext(errWithContext ErrorWithContext) periskop.ErrorW
 	httpContext := periskop.HTTPContext{}
 	if errWithContext.HTTPContext != nil {
 		httpContext = periskop.HTTPContext{
-			RequestMethod:  errWithContext.HTTPContext.RequestBody,
+			RequestMethod:  errWithContext.HTTPContext.RequestMethod,
 			RequestURL:     errWithContext.HTTPContext.RequestURL,
 			RequestHeaders: errWithContext.HTTPContext.RequestHeaders,
 			RequestBody:    &errWithContext.HTTPContext.RequestBody,
