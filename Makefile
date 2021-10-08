@@ -1,4 +1,4 @@
-.PHONY: test lint
+.PHONY: test lint build
 
 test:
 	go test -v -race
