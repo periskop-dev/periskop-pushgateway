@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/soundcloud/periskop-go"
+	"github.com/periskop-dev/periskop-go"
 )
 
 func TestPeriskopAdapter(t *testing.T) {

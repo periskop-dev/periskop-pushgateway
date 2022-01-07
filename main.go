@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
-	"github.com/soundcloud/periskop-go"
+	"github.com/periskop-dev/periskop-go"
 )
 
 func main() {

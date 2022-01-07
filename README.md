@@ -1,14 +1,17 @@
 # periskop-pushgateway
 
-[![Build Status](https://api.cirrus-ci.com/github/soundcloud/periskop-pushgateway.svg)](https://cirrus-ci.com/github/soundcloud/periskop-pushgateway)
+[![Build Status](https://api.cirrus-ci.com/github/periskop-dev/periskop-pushgateway.svg)](https://cirrus-ci.com/github/periskop-dev/periskop-pushgateway)
 
-Pushgateway for [Periskop](https://github.com/soundcloud/periskop).
+Pushgateway for [Periskop](https://github.com/periskop-dev/periskop).
 
 ![2021-10-04_10-28](https://user-images.githubusercontent.com/280193/135818707-ad1d62b1-e65c-4878-a6e0-19d2f37e8022.png)
 
 ## Client Implementations
 
-* [periskop-go](https://github.com/soundcloud/periskop-go#using-push-gateway)
+* [periskop-go](https://github.com/periskop-dev/periskop-go#using-push-gateway)
+* [periskop-ruby](hhttps://github.com/periskop-dev/periskop-ruby#use-a-rack-middleware)
+* [periskop-python](https://github.com/periskop-dev/periskop-python#using-push-gateway)
+* [periskop-scala](https://github.com/periskop-dev/periskop-scala#using-push-gateway)
 
 ## API
 

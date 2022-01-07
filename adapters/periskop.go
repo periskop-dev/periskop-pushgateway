@@ -3,7 +3,7 @@ package adapters
 import (
 	"time"
 
-	"github.com/soundcloud/periskop-go"
+	"github.com/periskop-dev/periskop-go"
 )
 
 type Payload struct {

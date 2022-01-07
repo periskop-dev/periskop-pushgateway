@@ -2,11 +2,12 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 
-	"github.com/soundcloud/periskop-go"
-	"github.com/soundcloud/periskop-pushgateway/adapters"
+	"github.com/periskop-dev/periskop-go"
+	"github.com/periskop-dev/periskop-pushgateway/adapters"
 )
 
 func NewErrorsGatewayHandler(c *periskop.ErrorCollector) http.Handler {
@@ -25,6 +26,7 @@ func NewErrorsGatewayHandler(c *periskop.ErrorCollector) http.Handler {
 		for _, errorAggregate := range res.AggregatedErrors {
 			for _, err := range errorAggregate.LatestErrors {
 				errWithContext := adapters.ToPeriskopErrorWithContext(err)
+				fmt.Println(errorAggregate.AggregationKey)
 				c.ReportErrorWithContext(errWithContext, periskop.Severity(errorAggregate.Severity), errorAggregate.AggregationKey)
 			}
 		}
