@@ -4,5 +4,3 @@ github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
 github.com/periskop-dev/periskop-go v0.0.0-20220106155054-4dd58584af9f h1:481V7/bVRnfFNFtLphPKuw7X63pTRUzPzeD9iGG5tw8=
 github.com/periskop-dev/periskop-go v0.0.0-20220106155054-4dd58584af9f/go.mod h1:EUNa+ioN6++5iJcixQUY9eGTzUGjhkZALQTcNejW5vg=
-github.com/soundcloud/periskop-go v0.0.0-20210709100724-3f8876ffcbf3 h1:ATfG+v/OYxzvtQA2urLTNFyPJYWLnSSOzvvKa15tXQ0=
-github.com/soundcloud/periskop-go v0.0.0-20210709100724-3f8876ffcbf3/go.mod h1:J97ttdY/AWWa4ien4zICHKjSZ2B1yimnPpUI+0lQPeA=
