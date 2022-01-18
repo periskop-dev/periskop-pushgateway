@@ -9,7 +9,7 @@ Pushgateway for [Periskop](https://github.com/periskop-dev/periskop).
 ## Client Implementations
 
 * [periskop-go](https://github.com/periskop-dev/periskop-go#using-push-gateway)
-* [periskop-ruby](hhttps://github.com/periskop-dev/periskop-ruby#use-a-rack-middleware)
+* [periskop-ruby](https://github.com/periskop-dev/periskop-ruby#use-a-rack-middleware)
 * [periskop-python](https://github.com/periskop-dev/periskop-python#using-push-gateway)
 * [periskop-scala](https://github.com/periskop-dev/periskop-scala#using-push-gateway)
 
