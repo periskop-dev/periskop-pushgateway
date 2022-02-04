@@ -31,7 +31,7 @@ type ErrorInstance struct {
 	Class      string         `json:"class"`
 	Message    string         `json:"message"`
 	Stacktrace []string       `json:"stacktrace"`
-	Cause      *ErrorInstance `json:"cause"` // ignored
+	Cause      *ErrorInstance `json:"cause"`
 }
 
 type HTTPContext struct {
@@ -41,12 +41,23 @@ type HTTPContext struct {
 	RequestBody    string            `json:"request_body"`
 }
 
-func ToPeriskopErrorWithContext(errWithContext ErrorWithContext) periskop.ErrorWithContext {
-	errInstance := periskop.ErrorInstance{
-		Class:      errWithContext.Error.Class,
-		Message:    errWithContext.Error.Message,
-		Stacktrace: errWithContext.Error.Stacktrace,
+// generateErrorInstance generates a periskop.ErrorInstance from ErrorInstance
+func generateErrorInstance(errInstance ErrorInstance) periskop.ErrorInstance {
+	periskopErrInstance := periskop.ErrorInstance{
+		Class:      errInstance.Class,
+		Message:    errInstance.Message,
+		Stacktrace: errInstance.Stacktrace,
 	}
+	// propagates the exception cause in case the exception has it
+	if errInstance.Cause != nil {
+		cause := generateErrorInstance(*errInstance.Cause)
+		periskopErrInstance.Cause = &cause
+	}
+	return periskopErrInstance
+}
+
+func ToPeriskopErrorWithContext(errWithContext ErrorWithContext) periskop.ErrorWithContext {
+	errInstance := generateErrorInstance(errWithContext.Error)
 
 	httpContext := periskop.HTTPContext{}
 	if errWithContext.HTTPContext != nil {

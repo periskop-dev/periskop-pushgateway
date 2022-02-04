@@ -20,6 +20,11 @@ func TestPeriskopAdapter(t *testing.T) {
 			Class:      "Test",
 			Message:    "error!",
 			Stacktrace: []string{"line 12:", "syntax error"},
+			Cause: &ErrorInstance{
+				Class:      "Syntax error",
+				Message:    "Syntax error!",
+				Stacktrace: []string{"line 13:", "syntax error"},
+			},
 		},
 		UUID:      uuid.String(),
 		Severity:  "error",
@@ -36,6 +41,11 @@ func TestPeriskopAdapter(t *testing.T) {
 			Class:      errors.New("Test").Error(),
 			Message:    "error!",
 			Stacktrace: []string{"line 12:", "syntax error"},
+			Cause: &periskop.ErrorInstance{
+				Class:      "Syntax error",
+				Message:    "Syntax error!",
+				Stacktrace: []string{"line 13:", "syntax error"},
+			},
 		},
 		UUID:      uuid,
 		Timestamp: timestamp,
