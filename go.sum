@@ -1,10 +1,7 @@
-github.com/google/uuid v1.1.1 h1:Gkbcsh/GbpXz7lPftLA3P6TYMwjCLYm83jiFQZF/3gY=
 github.com/google/uuid v1.1.1/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
 github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
-github.com/periskop-dev/periskop-go v0.0.0-20220106155054-4dd58584af9f h1:481V7/bVRnfFNFtLphPKuw7X63pTRUzPzeD9iGG5tw8=
-github.com/periskop-dev/periskop-go v0.0.0-20220106155054-4dd58584af9f/go.mod h1:EUNa+ioN6++5iJcixQUY9eGTzUGjhkZALQTcNejW5vg=
-github.com/periskop-dev/periskop-go v0.0.0-20220118142044-a844c9fc8068 h1:VezWni+lGuOWlz9JiOUl3YVOpyUZ0PAsgKp65empD+c=
-github.com/periskop-dev/periskop-go v0.0.0-20220118142044-a844c9fc8068/go.mod h1:EUNa+ioN6++5iJcixQUY9eGTzUGjhkZALQTcNejW5vg=
+github.com/periskop-dev/periskop-go v0.0.0-20220512172842-c5603b259677 h1:ze38eGrVZIVbIwV1iXib/lm26uB0FDBnSjppGqKZUfQ=
+github.com/periskop-dev/periskop-go v0.0.0-20220512172842-c5603b259677/go.mod h1:EUNa+ioN6++5iJcixQUY9eGTzUGjhkZALQTcNejW5vg=
